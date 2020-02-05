@@ -1,0 +1,34 @@
+  string name;
+	string last;
+	string fullname;
+
+	cout << "Enter your first name\n";
+	cin >> name;
+
+	cout << "Enter your last name\n";
+	cin >> last;
+
+	fullname = name + "  " + last; 
+
+	cout << "your full name is " << fullname << endl;
+
+	
+
+	for (size_t i = 0; i < name.size(); i++) { //name.lenght
+
+		cout << "The letter number" << i+1 << " in your name is " << name.at(i) << endl;
+
+	}
+
+	
+	cout << "enter your name\n";
+	cin >> name;
+
+	string sentence(name);
+
+	cout << sentence.substr( 0,1 ) << endl;
+
+
+
+
+}
