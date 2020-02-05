@@ -1,0 +1,93 @@
+
+#include <iostream>
+#include "pch.h"
+using namespace std;
+#include <vector>
+
+int main()
+{
+    std::cout << "hello world!\n";
+
+	int mynumber;
+
+std::cout << "enter a number" << std::endl;
+std::cin >> mynumber;
+
+std::cout << "thank you, now i have stored your number in a variable" << std::endl;
+std::cout << mynumber<<" is your number"  << std::endl;
+
+int number;
+int per;
+
+cout << "insert a number\n";
+cin >> number;
+cout << "enter percentage\n";
+cin >> per;
+
+int x;
+
+x = (number / 100)*per;
+
+
+
+cout << x << " is " << per << "% of " << number << "\n";
+
+cout << "carpet cleaning comercial proposal\n";
+cout << "please check out our princes\n";
+cout << "small room: $25\n";
+cout << "big room $35\n";
+cout << "tax 6%\n";
+
+
+int a = 25;
+int b = 35;
+int xa;
+int x = 0;
+int za;
+int z = 0;
+float tax;
+
+cout << "how many large rooms would you like cleaned?\n";
+
+cin >> xa;
+
+cout << "how man samll rooms would you like cleaned?\n";
+
+cin >> za;
+
+x = xa * a;
+z = za * b;
+tax = (x+z)* 0.006;
+
+cout << "the cost is:\n";
+cout << "small rooms " << xa << "price: " << x << "\n";
+cout << "small rooms " << za << " price: " << z << "\n";
+cout << "tax is " << tax;
+
+
+
+	vector <int> vector1(5);
+
+	int extra;
+
+cout << vector1.at(1);
+cout << "Add an extra element to the vector \"vector1\"";
+
+cin >> extra;
+
+vector1.push_back(extra);
+
+
+for (size_t i = 0; i < vector1.size(); i++)
+{
+	cout << "this is element " << i << "value: " << vector1.at(i)<<endl;
+}
+
+
+
+
+
+
+system("pause");
+
+}
