@@ -1,0 +1,110 @@
+#include "pch.h" 
+#include <iostream> 
+#include <vector>
+#include <cstring>
+#include <cctype>
+#include <string>
+
+
+using namespace std;
+int main() {
+
+string Fruit0{ "Banana" };
+string Fruit1{ "Apple" };
+string Fruit2{ "Tomato" };
+string Fruit3{"Orange"};
+
+
+cout << boolalpha; //This is to tell the compiler to print true/false format
+
+cout << Fruit0 << " == " << Fruit1 << ": " << (Fruit0 == Fruit1) << endl;
+cout << Fruit1 << " == " << Fruit2 << ": " << (Fruit1 == Fruit2) << endl;
+cout << Fruit0 << " == " << Fruit0 << ": " << (Fruit0 == Fruit0) << endl;
+cout << Fruit3 << " > " << Fruit2 << ": " << (Fruit3 > Fruit2) << endl; // considering ASCII values
+
+// String Index
+
+string myName;
+
+cout << "Please insert you name" << endl;
+cin >> myName;
+
+cout << "My name is: " << myName << endl;
+
+cout << "Please insert a character to replace the first letter of your name" << endl;
+char myCharacter;
+cin >> myCharacter;
+
+myName[0] = myCharacter; // myName.at(0)
+
+
+cout << myName << endl;
+
+// concatenate C++ string
+
+string mixedFruits;
+
+mixedFruits = "My favorite fruits are: " + Fruit3 + " and " + Fruit1;
+
+cout << mixedFruits << endl;
+
+// loop with Strings
+
+for (size_t i = 0; i < Fruit0.length(); i++)
+{
+cout << Fruit0.at(i) << endl; //
+cout << endl;
+
+}
+
+cout << endl;
+
+//Range-based Loop
+
+for (char i:Fruit1) // execute for each character(i) inside of the Fruit1 string
+{
+cout << i;
+cout << endl;
+}
+
+//erase method
+
+string remove;
+remove = "This is erase method";
+
+cout << remove << endl;
+
+remove.erase(7, 6);
+
+cout << remove << endl;
+
+// Finding a word
+
+
+string languages{ "Cpp, Csharp, Java" };
+
+
+cout << "Type your favorite programming language below " << "List of languages available :"<< endl;
+cout << languages << endl;
+string choice;
+cin >> choice;
+
+int position{};
+position = languages.find(choice); //if if doesn't find, it will return string::npos (no-position)
+
+if (position != string::npos) {
+cout << "your favorite language starts at location " << position << " of the list" << endl;
+}
+else {
+cout << "your favorite is not on the list" << endl;
+}
+
+
+
+
+
+
+
+
+system("pause");
+}
