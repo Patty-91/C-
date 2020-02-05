@@ -1,0 +1,46 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+#include <cstring>
+
+
+
+using namespace std;
+
+int main() {
+char Name[20]{};
+char lastName[20]{};
+char fullName[40]{};
+char cinName[15]{};
+char myName[]{ "andre adura" };
+
+cout << "PLease enter your first name " << endl;
+cin >> Name;
+cout << "Hello " << Name << " your name has " << strlen(Name) << " characters" << endl; //strlen calculate the lenght of the string
+
+cout << "PLease enter your last name" << endl;
+cin >> lastName;
+
+
+strcat(fullName, Name); // strcat, concatenate strings (receive string, add to left argument)
+strcat(fullName, " ");
+strcat(fullName, lastName);
+
+cout << "your full name is " << fullName << endl;
+
+cout << "now type your full name" << endl;
+cin >> cinName;
+
+if (strcmp(fullName, myName) == 0)//that means, no difference between the compared strings
+{
+cout << fullName << " and "<< myName << " are the same" << endl;
+
+}
+else {
+cout << fullName << " is different than " << myName << endl;
+}
+
+
+
+system("pause");
+}
