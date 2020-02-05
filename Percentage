@@ -1,0 +1,48 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+
+using namespace std; //with this code, we let the compiler know that we are using the std namespace. 
+We no longer need the scope resolution std::
+
+
+-----------------------------------------------MULTIPLE OUTPUTS ----------------------------------------------------------
+
+int main() //This is our main function, same as in C
+{
+
+
+int a, b, c;
+
+cout << "insert 3 numbers\n";
+cin >> a >> b >> c;
+cout << "You entered " << a <<" " << b << " " << c << " \n";
+
+
+}
+
+-----------------------CALCULATE PERCENTAGE-----------------------------------
+int main() {
+
+
+
+double percentage, baseNumber,total, decimal;
+
+
+
+
+cout << "Enter the base number" << endl;
+cin >> baseNumber;
+
+cout << "Enter the percentage" << endl;
+cin >> percentage;
+
+decimal = percentage / 100;
+total = baseNumber * decimal;
+
+
+cout << total << " is " << percentage << " percent of " << baseNumber << endl;
+
+
+system("pause");
+
+}
