@@ -1,0 +1,44 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+using namespace std;
+
+
+int main() {
+//Vectors are part of the Std Template Lib
+//Vectors are flexible in size
+//Have the ability to use built-in functions like sort()
+// to use a Vector you need to #include<vector> library
+
+vector <int> myVector(5); //This will create a vector with 5 elements, automatically init as zero
+
+vector <int> initVector(10, 2);// This will create a vector of 10 elements, all init as 2
+
+vector <int> manualInit { 1,2,3,4,5 }; // vector of 5 elements
+
+vector <int> noCheck[3]; //This will not check boundries if you go out of range
+
+vector <int> BoundriesCheck(3); //This will do boundries check
+
+//Vector create "Objects" as elements, so you can assign them methods like .at()
+
+cout << myVector.at(0) << endl; // this will print the element 0 of the vector
+cout << initVector.at(1) << endl; // this will print the element 1 of the vector
+cout << manualInit.at(4) << endl; // this will print the element 4 of the vector
+
+cout << "Add an extra element to the Vector \"manualInit\"" << endl;
+int extraElement{0};
+cin >> extraElement;
+
+manualInit.push_back(extraElement); // now our vector is size 6
+
+//noCheck.at(4) = extraElement; //This will generate an error on compiler process
+/*BoundriesCheck.at(4) = extraElement;*/ // This will abort the program once is read
+
+for (size_t i = 0; i < manualInit.size(); i++)
+{
+cout << " This is the element " << i << " value: " << manualInit.at(i) << endl;
+}
+
+system("pause");
+}
