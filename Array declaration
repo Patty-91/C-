@@ -1,0 +1,32 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+
+using namespace std;
+
+
+int main() {
+// Arrays have a fixed size, and it stores data of the same type
+
+//declaring array
+int grades[5]{ 100,90,85,70,95 }; //initializing one by one
+
+int marks[10]{ 3,5 }; //init the first two, and the rest is set to zero
+
+int initArray[10]{}; // this will initialize all as zero
+
+int noSize[]{ 1,2,3,4,5 }; //define the size of the array as 5
+
+int inputArray[3]; // this array will be initialized by inputs
+cout << "Please insert the three array elements" << endl;
+cin >> inputArray[0] >> inputArray[1] >> inputArray[2];
+
+
+// loop to print the array
+for (size_t i = 0; i < 3; i++)
+{
+cout << " The element " << i << " is " << inputArray[i] << endl;
+}
+
+
+system("pause");
+}
