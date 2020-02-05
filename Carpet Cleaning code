@@ -1,0 +1,28 @@
+#include "pch.h" 
+#include <iostream> 
+using namespace std;
+
+int main() {
+
+const double smallRoomPrice = 25;
+const double largeRoomPrice = 35;
+double tax, total;
+cout << "Carpet Cleaning Commercial Proposal\nPlease check out our prices:\nSmall Room: $25\nLarge Room: $35\nTax:6%\nHow many Large Rooms would you like cleaned?\n" << endl;
+int numLargerRoom;
+cin >> numLargerRoom;
+cout << "How many Small Rooms would you like cleaned?" << endl;
+int numSmallRoom;
+cin >> numSmallRoom;
+total = (numLargerRoom * largeRoomPrice) + (numSmallRoom * smallRoomPrice);
+tax = total * 0.06;
+total += tax;
+cout << "The cost is:\nSmall Rooms: " << numSmallRoom << " Price: $" << numSmallRoom * smallRoomPrice << endl;
+cout << "Large Rooms: " << numLargerRoom << " Price: $" << numLargerRoom * largeRoomPrice << endl;
+cout << "Tax: " << tax << endl;
+cout << "*******************************************************\n" << endl;
+cout << "Total: $" << total << endl;
+system("pause");
+}
+
+
+
