@@ -1,0 +1,83 @@
+#include "pch.h" 
+#include <iostream> /
+#include <vector>
+#include <cstring>
+#include <cctype>
+#include <string>
+
+
+using namespace std;
+int main() {
+
+//string s1; //not initialized
+//string s2{ "Andre" }; //initialized as Andre
+//string s3{ s2 }; // initialize as a copy of string s2 {"Andre"}
+//string s4{ "Andre", 3 }; // Initialize just the 3 first characters {"And"}
+//string s5(3, 'X'); //Initialize 3 characters as X {'X','X','X'}
+
+
+//// Concatenate strings
+
+//cout << "enter your first name" << endl;
+//string name{};
+//cin >> name;
+
+//cout << "enter your last name" << endl;
+//string lastName{};
+//cin >> lastName;
+
+//string fullName{};
+//fullName = name + " " + lastName;
+
+//cout << "Your full name is " << fullName << endl;
+
+//for (size_t i = 0; i <name.size(); i++) //name.lenght() will work the same
+//{
+// cout << "The letter number " << i+1 << " at your name is " << name.at(i) <<endl;
+//}
+//
+
+////Subtracting substrings from a string
+
+//string sentence{ "This is a test" };
+
+//cout << sentence.substr(0, 4) << endl; //Starting from index 0, give me 4 character of this string {"This"}
+//cout << sentence.substr(5, 2) << endl; //Starting from index 5, give me 2 character of this string {"is"}
+//cout << sentence.substr(10, 4) << endl; //Starting from index 10, give me 4 character of this string {"is"}
+
+////finding the index
+
+//cout << sentence.find("This") << endl;
+//cout << sentence.find("is") << endl;
+//cout << sentence.find("test") << endl;
+//cout << sentence.find("is",4) << endl; // find index of "is", starting from element 4 of the string
+//
+////Deleting method
+
+//cout << "Your name without the first letter is: " << name.erase(0, 1) << endl; //Delete start from index 0, removing 1 character
+
+//
+//name.clear(); //This will free the memory, erasing all the string content
+
+string multipleString{};
+
+//cout << "insert two names"<<endl;
+//cin >> multipleString; //This will read the name until the first white space
+
+//cout << multipleString << endl;
+
+
+cout << "insert two names, now using getline" << endl;
+getline(cin, multipleString); //this will read the input until the user press Enter
+
+cout << multipleString << endl;
+
+cout << "insert two names, now using getline, and press \'x\' to submit" << endl;
+getline(cin, multipleString, 'x'); //this will read the input until the user press x
+
+cout << multipleString << endl;
+
+
+
+system("pause");
+}
