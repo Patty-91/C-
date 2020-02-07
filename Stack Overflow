@@ -1,0 +1,34 @@
+Memory Allocation / Heap / Stack Overflow
+
+
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+
+
+//This is a Stack Overflow
+//int overFlow[1300000];
+
+
+//creating a pointer to an integer that has a memory allocation on the Heap Memory
+int* intPtr{};
+intPtr = new int; // the word new lets the computer knows that it is an obj, and needs memory allocation
+
+*intPtr = 200; // you can use this pointer to point to diffrent integers
+
+cout << *intPtr << endl;
+
+// changing the value
+*intPtr = 300;
+cout << *intPtr << endl;
+
+// after you done with this pointer, you need to free the memory
+delete intPtr;
+
+}
