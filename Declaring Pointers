@@ -1,0 +1,35 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+// create an integer and a pointer pointing to it
+int value{ 10 };
+int * myPtr{ &value };
+
+cout << *myPtr << endl; // De-reference the pointer and print the value
+
+
+// creating a vector and a pointer to it
+vector <string> games{ "COD","BF","FIFA","Siege" };
+vector<string>* vectorPtr{ &games };
+
+//Printing the first element of the vector using the pointer
+
+cout << (*vectorPtr).at(0) << endl;
+
+//range-based loop to print the full vector using pointers
+cout << "This is my games list: " << endl;
+for (string i : *vectorPtr) { // we can use the auto data type
+cout << i << endl;
+};
+
+
+
+
+}
+
