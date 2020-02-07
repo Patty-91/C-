@@ -1,0 +1,45 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+#include <cstring>
+#include <cctype>
+#include <string>
+
+void passByValue(int a = 2);
+void passByReference(int * address);
+
+
+using namespace std;
+int main() {
+
+//by value
+int input{};
+cout << "enter a number to multiply by 2 using Pass by value" << endl;
+cin >> input;
+
+passByValue(input);
+cout << input<<endl;
+
+//by Reference
+
+int input2{};
+cout << "enter a number to multiply by 2 using Pass by reference" << endl;
+cin >> input2;
+
+passByReference(&input2);
+cout << input2<<endl;
+
+
+
+
+
+system("pause");
+}
+
+void passByValue(int a) {
+a *= 2;
+}
+
+void passByReference(int * address) {
+*address *= 2;
+}
