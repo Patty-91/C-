@@ -1,0 +1,50 @@
+#include<iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+string convert(int number = 0);
+
+int main() {
+
+cout << "Insert a number" << endl;
+int userNumber{};
+
+
+cin >> userNumber;
+cout << convert(userNumber) << endl;
+
+system("pause");
+return 0;
+}
+
+
+string convert(int number) {
+const vector <string> stringNumbers{ "zero","one","two","three","four","five","six","seven","eight","nine" };
+
+
+static vector<string> result{};
+if (number > 9) {
+while (number > 0) {
+int val = number % 10;
+
+result.push_back(convert(val));
+
+number /= 10;
+}
+
+if (number == 0) {
+for (size_t i = result.size(); i > 0;i--) {
+cout << result.at(i-1) << endl;
+}
+
+return "That is your number";
+}
+
+}
+
+return (number >= 0 && number < 10)? stringNumbers.at(number) : "Please insert a valid number";
+
+
+}
