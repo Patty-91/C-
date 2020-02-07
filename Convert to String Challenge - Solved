@@ -1,0 +1,43 @@
+#include<iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+string convert(int number = 0);
+
+int main() {
+
+cout << "Insert a number" << endl;
+int userNumber{};
+
+
+cin >> userNumber;
+cout << convert(userNumber) << endl;
+
+system("pause");
+return 0;
+}
+
+
+string convert(int number) {
+const vector <string> stringNumbers{ "zero","one","two","three","four","five","six","seven","eight","nine" };
+return (number >= 0 && number < 10)? stringNumbers.at(number) : "Please insert a valid number";
+
+//if (number >= 0 && number < 10)
+//{
+//
+//
+
+// return stringNumbers.at(number);
+
+
+
+//}
+//else {
+
+//
+// return "Please insert a valid number" ;
+//}
+
+}
