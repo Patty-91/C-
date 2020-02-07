@@ -1,0 +1,4 @@
+In order to the Getline() function work properly, you need to clear the buffer before using it;
+remember to always use the following code right before you getline call:
+
+cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
