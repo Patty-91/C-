@@ -1,0 +1,126 @@
+#include <iostream>
+#include <string>
+#include "Header.h"
+#include <vector>
+#include <math.h>
+
+using namespace std;
+//int num1, num2;
+
+void menu() {
+
+	int option{};
+
+	cout << "Select an option" << endl;
+		cin >> option;
+
+	switch (option)
+	{
+
+
+	case 13:
+		 {
+			cout << "Swap two numers" << endl;
+			cout << "Enter first number" << endl;
+			int first{};
+			cin >> first;
+			cout << "Enter second number" << endl;
+			int second{};
+			cin >> second;
+
+			swap(&first, &second);
+
+
+			cout << "Now first number is " << first << endl;
+			cout << "Now second number is " << second << endl;
+
+
+			break;
+		}
+	case 14: {
+
+		int rad{};
+		
+
+
+		cout << "calculate the volume of a sphere" << endl;
+
+		cout << "enter the radius" << endl;
+		cin >> rad;
+
+		volume_sphere(&rad);
+
+		
+
+
+		break;
+	}
+		
+		
+
+	/*case 15:
+		volume_cube();
+		break;
+
+	case 16: 
+		volume_cylinder();
+		break;
+
+	case 17: 
+		area_per_rectangule();
+		break;
+
+	case 18:
+		area_triangle();
+		break;
+
+	case 19:
+		area_circle();
+		break;
+
+	case 20:
+		cel_fahr();
+		break;
+
+	case 21:
+		fahr_cel();
+		break;*/
+
+	default:
+		break;
+		
+	}
+
+
+
+
+}
+
+
+
+
+void swap( int * first, int * second) {
+	
+	/*int *first{};
+	first = new int(fi);
+
+	int *second{};
+	second = new int(sec);
+*/
+	int temp;
+	temp = *first;
+	*first = *second;
+	*second = temp;
+
+
+
+}
+
+void volume_sphere(int *rad) {
+
+	float vol{}, pi = {3.1416};
+
+	vol = (4 * pi*(*rad)*(*rad)*(*rad) / 3);
+
+	cout << "the volume is " << vol << endl;
+}
