@@ -5,13 +5,61 @@
 #include <math.h>
 
 using namespace std;
-//int num1, num2;
+
+
+void menu();
+void swap(int *first, int *second);
+void volume_sphere(int *rad);
+void vol_cube( int *side);
+float vol_cylinder(float *a, float *h);
+int area_per_rectangule(int *len, int *wid, int *a, int *p);
+int area_triangle(int *a, int *b, int *c, int *s, int *area);
+float area_circle(int *rad, float *area);
+float cel_fahr(float *cel, float *fahr);
+float fahr_cel(float *cel, float *fahr);
+int third_angle(int *first, int *second, int *third);
+float km_miles(float *km, float *miles);
+float kel_fahr(float *kel, float *fahr);
+float kel_cel(float *kel, float *cel);
+float fahr_kel(float *fahr, float *kel);
+float cel_kel(float *cel, float *kel);
+
+int main()
+{
+
+	menu();
+
+	system("pause");
+	return 0;
+}
+
 
 void menu() {
 
 	int option{};
 
+	cout << " " << endl;
 	cout << "Select an option" << endl;
+	cout << " " << endl;
+	cout << "13-Swap two numbers" << endl;
+	cout << "14-Calculate the volume of a sphere" << endl;
+	cout << "15-Calculate the volume of a cube" << endl;
+	cout << "16-Calculate the volume of a cylinder" << endl;
+	cout << "17-Calculate the area and perimeter of a rectangule" << endl;
+	cout << "18-Calculate the area of a triangle using Heron's fromula" << endl;
+	cout << "19-Calculate the area of a circle" << endl;
+	cout << "20-Conver Celsius to fahrenheit" << endl;
+	cout << "21-Conver Fahrenheit to Celsius" << endl;
+	cout << "22-Find the third angle of a triangle" << endl;
+	cout << "23-Convert kilometers per hour to miles per hour" << endl;
+	cout << "24-Conver Kelvin to Fahrenheit" << endl;
+	cout << "25-Conver kelvin to celsius" << endl;
+	cout << "26-Conver fahrenheit to Kelvin" << endl;
+	cout << "27-Conver Celsius to kelvin" << endl;
+
+
+
+
 		cin >> option;
 
 	switch (option)
@@ -35,14 +83,15 @@ void menu() {
 			cout << "Now second number is " << second << endl;
 
 
+			menu();
 			break;
+			
+			
 		}
 	case 14: {
 
 		int rad{};
 		
-
-
 		cout << "calculate the volume of a sphere" << endl;
 
 		cout << "enter the radius" << endl;
@@ -50,42 +99,235 @@ void menu() {
 
 		volume_sphere(&rad);
 
-		
+		cout << "the volume is " << rad << endl;
 
 
+		menu();
 		break;
 	}
 		
 		
 
-	/*case 15:
-		volume_cube();
-		break;
+	case 15: {
 
-	case 16: 
-		volume_cylinder();
+		int side{};
+
+		cout << "Calculate the volume of a cube" << endl;
+		cout << "Enter the side of the cube" << endl;
+		cin >> side;
+		
+
+		vol_cube(&side);
+		cout << "The volume of the cube is :" << side << endl;
+
+
+		menu();
 		break;
+	}
+
+	case 16: {
+
+
+		float a{}, h{};
+		
+		cout << "Calculate the volume of a cylinder" << endl;
+		cout << "Enter the area" << endl;
+		cin >> a;
+		cout << "Enteer the height" << endl;
+		cin >> h;
+
+
+
+		cout << "The volume is: " << vol_cylinder(&a, &h)<< endl;
+
+		menu();
+		break;
+	}
 
 	case 17: 
-		area_per_rectangule();
+		
+	{
+		int len{}, wid{};
+		int a{}, p{};
+
+		cout << "Calculate the area of and perimeter of a rectangule" << endl;
+		cout << "Input the widht of the rectangle" << endl;
+		cin >> len;
+		cout << "Enter the length of the rectangule" << endl;
+		cin >> wid;
+
+		area_per_rectangule(&len, &wid, &a, &p);
+
+		cout << "The area is: " << a <<endl;
+
+		cout << "The perimeter is: "<< p <<endl;
+
+
+		menu();
 		break;
+
+	}
 
 	case 18:
-		area_triangle();
+	{
+		int a{}, b{}, c{}, s{}, area{};
+
+		cout << "Enter the area of a triangle" << endl;
+		cout << "Enter side 1" << endl;
+		cin >> a;
+		cout << "Enter side 2" << endl;
+		cin >> b;
+		cout << "Enter side 3" << endl;
+		cin >> c;
+
+		area_triangle(&a, &b, &c, &s, &area);
+		cout << "the area is: " << area << endl;
+
+		menu();
 		break;
+	}
 
 	case 19:
-		area_circle();
+	{
+
+		int rad{};
+		float area{};
+
+		cout << "calculate the area of a circle" << endl;
+		cout << "Enter Radius" << endl;
+		cin >> rad;
+
+
+		area_circle(&rad, &area);
+		cout << "the area is: " << area << endl;
+
+		menu();
 		break;
+	}
+		
 
 	case 20:
-		cel_fahr();
+	{
+
+		float cel{}, fahr{};
+
+		cout << "Input temperature in Celsius" << endl;
+		cin >> cel;
+
+		cel_fahr(&cel, &fahr);
+
+		cout << "Temperature in Fahrenheit is: " << fahr << endl;
+
+		menu();
 		break;
+	}
 
 	case 21:
-		fahr_cel();
-		break;*/
+	{
+		float fahr{}, cel{};
 
+		cout << "Input temperature in Fahrenheit" << endl;
+		cin >> fahr;
+
+		fahr_cel(&cel, &fahr);
+
+		cout << "Temperature in Fahrenheit is: " << cel << endl;
+
+		menu();
+		break;
+	}
+
+	case 22:
+	{
+		int first{}, second{}, third{};
+
+
+		cout << "FInd the third angle of a triangle" << endl;
+		cout << "Enter first angle" << endl;
+		cin >> first;
+		cout << "Enter second angle" << endl;
+		cin >> second;
+
+		third_angle(&first, &second, &third);
+		cout << "The third angle is: " << third << endl;
+
+		menu();
+		break;
+	}
+
+	case 23:
+	{
+		float km{}, miles{};
+
+		cout << "Enter the distance in km" << endl;
+		cin >> km;
+
+
+		km_miles(&km, &miles);
+		cout <<"Result is: " << miles << endl;
+
+		menu();
+		break;
+	}
+	case 24:
+	{
+		float kel{}, fahr{};
+		cout << "Input emperature in kelvin" << endl;
+		cin >> kel;
+
+		kel_fahr(&kel, &fahr);
+		cout << "The temperature in Fahrenheit is: "<<fahr << endl;
+
+
+		menu();
+		break;
+	}
+
+	case 25:
+	{
+		float kel{}, cel{};
+		cout << "Input emperature in kelvin" << endl;
+		cin >> kel;
+
+		kel_cel(&kel, &cel);
+		cout << "The temperature in Celsius is: " << cel << endl;
+
+		menu();
+		break;
+	}
+
+	case 26:
+	{
+	
+		float fahr{}, kel{};
+
+		cout << "Input temperature in Fahrenheit" << endl;
+		cin >> fahr;
+
+		fahr_kel(&fahr, &kel);
+
+
+		cout << "The temperature in Kelvin is: " << kel << endl;
+
+		menu();
+		break;
+	}
+	case 27:
+	{
+
+		float cel{}, kel{};
+
+		cout << "Input temperature in Celsius" << endl;
+		cin >> cel;
+
+		cel_kel(&cel, &kel);
+
+
+		cout << "The temperature in Kelvin is: " << kel << endl;
+
+		menu();
+		break;
+	}
 	default:
 		break;
 		
@@ -101,12 +343,6 @@ void menu() {
 
 void swap( int * first, int * second) {
 	
-	/*int *first{};
-	first = new int(fi);
-
-	int *second{};
-	second = new int(sec);
-*/
 	int temp;
 	temp = *first;
 	*first = *second;
@@ -122,5 +358,141 @@ void volume_sphere(int *rad) {
 
 	vol = (4 * pi*(*rad)*(*rad)*(*rad) / 3);
 
-	cout << "the volume is " << vol << endl;
+	*rad = vol;
 }
+
+void vol_cube( int *side) {
+
+	float vol{};
+	
+	vol = pow(*side, 3);
+	*side = vol;
+
+	
+	
+}
+
+float vol_cylinder(float *a, float *h) {
+
+	float vol{};
+
+	vol = *a *(*h);
+
+	return vol;
+
+}
+
+int area_per_rectangule(int *len, int *wid, int *a, int *p) {
+
+
+	
+
+	*a = *len*(*wid);
+
+	*p = 2*(*len *(*wid));
+
+	return *a;
+	return *p;
+	
+}
+
+int area_triangle(int *a, int *b, int *c, int *s, int *area) {
+
+	
+
+
+	*s = (*a + *b + *c) / 2;
+
+	*area = sqrt(*s*((*s - *a)*(*s - *b)*(*s - *c)));
+
+	return *area;
+}
+
+float area_circle(int *rad, float *area) {
+
+	float pi = 3.1416;
+
+	*area = pi *( pow(*rad, 2));
+
+	return *area;
+}
+
+float cel_fahr(float *cel, float *fahr) {
+
+
+
+	*fahr = (*cel *9 / 5) + 32;
+
+	return *fahr;
+		
+
+
+}
+
+float fahr_cel(float *cel, float *fahr) {
+
+
+	*cel = (*fahr - 32) * 5 / 9;
+
+	return *cel;
+
+}
+
+int third_angle(int *first, int *second, int *third) {
+
+	
+
+	*third = 180-*first - *second;
+
+	return *third;
+
+}
+
+float km_miles(float *km, float *miles) {
+
+
+	*miles = (*km * 0.6213712);
+
+	return *miles;
+
+
+}
+
+float kel_fahr(float *kel, float *fahr) {
+
+
+
+	*fahr = (9.0 / 5) * (*kel - 273.15) + 32;
+
+	return *fahr;
+
+}
+
+float kel_cel(float *kel, float *cel) {
+
+
+	*cel = *kel - 273.15;
+
+		return *cel;
+
+}
+
+float fahr_kel(float *fahr, float *kel) {
+
+
+	
+
+	*kel = (5.0 / 9) * (*fahr - 32) + 273.15;
+
+	return *kel;
+}
+
+float cel_kel(float *cel, float *kel) {
+
+
+	 *kel = *cel + 273.15;
+
+	 return *kel;
+
+}
+
