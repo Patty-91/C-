@@ -9,6 +9,7 @@ using namespace std;
 void menu() {
 
 	char name[20];
+	
 
 	cout << "Please enter your name" << endl;
 	cin >> name;
@@ -17,26 +18,23 @@ void menu() {
 	cout << "************MENU**********" << endl;
 	cout << "Please select an option" << endl;
 	cout << "*********************************" << endl;
-
 	cout << "0-Initialize your stack" << endl;
 	cout << "1-Push a value in the stack" << endl;
 	cout << "2-Pop a value from the satck" << endl;
 	cout << "3-Pint stack" << endl;
 	cout << "4-Exit the program" << endl;
 	
-
 	int option{};
+
+	cin >> option;
+	
 
 	switch (option)
 	{
 	case 1:
 
-
 		init();
-
 		break;
-
-
 
 
 	default:
@@ -47,7 +45,19 @@ void menu() {
 
 void init() {
 
-	cout << "What size is you array going to be" << endl;
+	int size{};
+	cout << "What size is your array going to be" << endl;
+	cin >> size;
+
+	int *arrayPtr{};
+	arrayPtr = new int[size];
+	
+	cout << "Your stack is initialized with "<<size<<" zeros"<<endl;
+
+}
+
+void push() {
+
 
 
 }
