@@ -1,0 +1,45 @@
+#include "pch.h"
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int DynamicPrint(int size = 10);
+
+int main()
+{
+
+
+int dynamicSize{};
+cout << "Enter the size of the array" << endl;
+cin >> dynamicSize;
+
+cout << "This is my array with " << DynamicPrint(dynamicSize) << " Elements" << endl;
+
+
+
+
+}
+
+int DynamicPrint(int size) {
+
+int *myPtr{};
+myPtr = new int[size];
+
+
+
+for (size_t i = size; i > 0; --i)
+{
+myPtr[i] = i;
+
+}
+
+
+for (size_t i = size; i > 0; --i) {
+cout << myPtr[i] << endl;
+}
+
+return size;
+
+}
