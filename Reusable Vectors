@@ -1,0 +1,221 @@
+#include "pch.h" // This is a Standard Header File, it will help our solution to integrate all of our files
+#include <iostream> // This is the Basic input/output library, like the <stdio.h> on C
+#include <vector>
+#include <cstring>
+#include <cctype>
+#include <string>
+using namespace std;
+
+void printVector(vector<string>* myVector);
+string addToVector(vector<string>* theVector, string* myString);
+void print2DVector(vector<vector<string>>* Vector2D);
+void menu();
+void back();
+
+
+
+
+vector<string> moviesVector{};
+vector<string> gamesVector{};
+vector<string> bandsVector{};
+
+
+int main() {
+
+
+
+menu();
+
+
+
+
+system("pause");
+return 0;
+}
+
+void printVector(vector<string>* myVector) {
+cout << "This is my list: " << endl;
+for (auto i : *myVector) {
+cout << i << endl;
+}
+
+}
+
+string addToVector(vector<string>* theVector,string* myString) {
+
+(*theVector).push_back(*myString);
+return *myString;
+
+}
+void menu() {
+
+
+cout << "----------Menu------------" << endl;
+cout << "Option 1 - display my vectors\n";
+cout << "Option 2 - Add a string to the vector\n";
+cout << "Option 3 - Print Vector\n";
+cout << "Option 4 - Concatenate vectors\n";
+cout << "Option 5 - Exit\n";
+
+cout << "Please choose an option..." << endl;
+int option{};
+cin >> option;
+
+switch (option)
+{
+case 1:
+cout << "List of Movies" << endl;
+cout << "List of games" << endl;
+cout << "List of bands" << endl;
+
+back();
+break;
+
+case 2: {
+cout << "please choose a list: " << endl;
+cout << "Press 1 for: Movies" << endl;
+cout << "Press 2 for: Games" << endl;
+cout << "Press 3 for: Bands" << endl;
+int setList{};
+cin >> setList;
+
+switch (setList)
+{
+case 1: {
+cout << "You have chosen the Movies List" << endl;
+cout << "Please enter a movie" << endl;
+string movie{};
+cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+getline(cin, movie);
+
+addToVector(&moviesVector, &movie);
+cout << "Your movie was added to the list" << endl;
+back();
+break;
+}
+
+case 2:
+
+{
+cout << "You have chosen the Games List" << endl;
+cout << "Please enter a game" << endl;
+string game{};
+cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+getline(cin, game);
+addToVector(&gamesVector, &game);
+cout << "Your game was added to the list" << endl;
+back();
+break;
+}
+case 3:
+{
+cout << "You have chosen the Bands List" << endl;
+cout << "Please enter a band" << endl;
+string band{};
+cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+getline(cin, band);
+addToVector(&bandsVector, &band);
+cout << "Your game was added to the list" << endl;
+back();
+break;
+}
+
+default:
+back();
+break;
+}
+
+}
+
+case 3:
+{
+cout << "please choose a list to be printed: " << endl;
+cout << "Press 1 for: Movies" << endl;
+cout << "Press 2 for: Games" << endl;
+cout << "Press 3 for: Bands" << endl;
+int setList{};
+cin >> setList;
+
+switch (setList)
+{
+case 1: {
+cout << "Movies list: " << endl;
+printVector(&moviesVector);
+back();
+break;
+}
+
+case 2:
+
+{
+cout << "Games list: " << endl;
+printVector(&gamesVector);
+back();
+}
+case 3:
+{
+cout << "Bands list: " << endl;
+printVector(&bandsVector);
+back();
+break;
+}
+
+default:
+back();
+break;
+}
+}
+
+case 4:
+{
+
+cout << "This is a vector with all my vectors inside" << endl;
+
+vector<vector<string>> multiVector;
+multiVector.push_back(moviesVector);
+multiVector.push_back(gamesVector);
+multiVector.push_back(bandsVector);
+
+print2DVector(&multiVector);
+back();
+}
+
+
+default:
+break;
+
+
+}
+
+
+}
+
+void back() {
+
+cout << "\n\nPress 1 to go back" << endl;
+cout << "Press 0 to exit" << endl;
+int goBack{};
+cin >> goBack;
+if (goBack == 1) {
+menu();
+}
+else {
+exit(0);
+}
+}
+
+void print2DVector(vector<vector<string>> * Vector2D) {
+
+
+
+for (size_t i = 0; i < Vector2D->size(); i++)
+{
+for (size_t j = 0; j < (*Vector2D).at(0).size(); j++)
+{
+cout << Vector2D->at(i).at(j) << endl;
+}
+}
+
+}
+
+
